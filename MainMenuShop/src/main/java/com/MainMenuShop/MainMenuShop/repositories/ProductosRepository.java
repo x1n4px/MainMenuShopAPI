@@ -16,4 +16,8 @@ public interface ProductosRepository extends JpaRepository<Productos, Long> {
 
     @Query(value = "SELECT * FROM PRODUCTOS WHERE UPPER(FAMILIA)=UPPER(:familia) AND UPPER(CATEGORÍA)=UPPER(:categoria)", nativeQuery = true)
     List<Productos> filtradoRapido(String familia, String categoria);
+
+
+
+   // List<Productos> findByMarcaAndFamiliaAndCategoria(String marca, String familia, String categoria);
 }

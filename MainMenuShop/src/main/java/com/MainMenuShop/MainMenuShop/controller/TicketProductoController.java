@@ -67,12 +67,12 @@ public class TicketProductoController {
     }
 
     @GetMapping("/productos/Filtrados/CategoriaFamilia")
-    public List<?> obtenerFiltradoRapido(@RequestParam("familia") String familia, @RequestParam("categoria") String categoria) {
+    public List<?> obtenerFiltradoRapido(@RequestParam("familia") String familia, @RequestParam("categoria") String categoria ) {
         List<Productos> productos = productoService.filtradoRapido(familia, categoria) ;
         List<ProductosOnlineDTO> productosDTOList = new ArrayList<>();
-        for (Productos producto: productos) {
-            ProductosOnlineDTO productoDTO = ProductosOnlineDTO.fromProducto(producto);
-            productosDTOList.add(productoDTO);
+         for (Productos producto: productos) {
+             ProductosOnlineDTO productoDTO = ProductosOnlineDTO.fromProducto(producto);
+             productosDTOList.add(productoDTO);
         }
         return productosDTOList;
     }
